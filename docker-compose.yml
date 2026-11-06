@@ -1,0 +1,52 @@
+# FastAPI inference API + MLflow Tracking Server (C6).
+#   docker compose up --build -d     API: http://localhost:8000/docs   MLflow UI: http://localhost:5000
+#   docker compose down              stop and remove containers (the mlflow-data volume is kept)
+#   docker compose down -v           also delete the volume (all MLflow runs)
+#
+# Compose puts both services on one network, so the API reaches MLflow by its
+# service name: http://mlflow:5000. Checked against MLflow 3.17.1:
+#   - MLflow 3.x rejects unknown Host headers (403) on its API routes, so the
+#     service name must be listed in --allowed-hosts.
+#   - SQLite backend -> one worker process (avoids "database is locked").
+name: mlops-lab-7-9
+
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v3.17.1         # same version as requirements-dev.txt
+    command:
+      - mlflow
+      - server
+      - --host=0.0.0.0
+      - --port=5000
+      - --backend-store-uri=sqlite:////mlflow/mlflow.db      # runs, params, metrics
+      - --artifacts-destination=/mlflow/artifacts            # artifacts, uploaded through the server
+      - --workers=1
+      - --allowed-hosts=mlflow,mlflow:5000,localhost,localhost:*,127.0.0.1,127.0.0.1:*
+    ports:
+      - "5000:5000"
+    volumes:
+      - mlflow-data:/mlflow                                  # survives `docker compose down`
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    restart: unless-stopped
+
+  api:
+    build: .
+    image: ml-inference-api:1.0
+    ports:
+      - "8000:8000"
+    environment:
+      MODEL_PATH: /app/models/model.joblib
+      MLFLOW_TRACKING_URI: http://mlflow:5000                # service name, not localhost
+      LOG_LEVEL: info
+    depends_on:
+      mlflow:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  mlflow-data:
