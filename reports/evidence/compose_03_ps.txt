@@ -1,0 +1,4 @@
+$ docker compose -f docker-compose.yml -f /tmp/claude-0/-home-claude/40f4bf80-5687-5615-960d-cf534cd5c1ee/scratchpad/docker/compose.sandbox.yml ps --format {{.Service}}  {{.Status}}  {{.Ports}}
+api  Up 2 seconds (health: starting)  0.0.0.0:8000->8000/tcp
+mlflow  Up 13 seconds (healthy)  0.0.0.0:5000->5000/tcp
+

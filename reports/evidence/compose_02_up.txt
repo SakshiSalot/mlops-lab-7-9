@@ -1,0 +1,78 @@
+$ docker compose -f docker-compose.yml -f /tmp/claude-0/-home-claude/40f4bf80-5687-5615-960d-cf534cd5c1ee/scratchpad/docker/compose.sandbox.yml up --build -d
+#1 [internal] load local bake definitions
+#1 reading from stdin 599B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.30kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/local/python:3.11-slim-standin
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 553B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/7] FROM docker.io/local/python:3.11-slim-standin@sha256:48919d2f4ecdfd30507bf5748368212b16f32fb2fcdd5d64bfdcc5c271a40584
+#6 resolve docker.io/local/python:3.11-slim-standin@sha256:48919d2f4ecdfd30507bf5748368212b16f32fb2fcdd5d64bfdcc5c271a40584 0.0s done
+#6 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.13kB done
+#5 DONE 0.0s
+
+#7 [4/7] RUN pip install --no-cache-dir -r requirements.txt
+#7 CACHED
+
+#8 [5/7] COPY src/ ./src/
+#8 CACHED
+
+#9 [2/7] WORKDIR /app
+#9 CACHED
+
+#10 [3/7] COPY requirements.txt .
+#10 CACHED
+
+#11 [6/7] COPY models/model.joblib models/model_metadata.json ./models/
+#11 CACHED
+
+#12 [7/7] RUN useradd --create-home --uid 10001 appuser
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:a9e285dd640b30946e8852916a963dd7b5992bbff4dfb951770330fe8d06680f done
+#13 exporting config sha256:20ff7aec27087ada18ea0b50710c02fdd6c9825ef762c7d482e5b37d690749fa done
+#13 exporting attestation manifest sha256:dd4d7566f706c346b1af9efe72a79c193094ab1411557726bdd302a36854176a done
+#13 exporting manifest list sha256:74f6a08b53328c732465ac6cf1a3dc63f8271065585aa11e209c03eb44c2a269 done
+#13 naming to docker.io/library/ml-inference-api:1.0 done
+#13 unpacking to docker.io/library/ml-inference-api:1.0 done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image ml-inference-api:1.0 Building 
+ Image ml-inference-api:1.0 Built 
+ Network mlops-lab-7-9_default Creating 
+ Network mlops-lab-7-9_default Creating 
+ Volume mlops-lab-7-9_mlflow-data Creating 
+ Volume mlops-lab-7-9_mlflow-data Creating 
+ Volume mlops-lab-7-9_mlflow-data Created 
+ Volume mlops-lab-7-9_mlflow-data Created 
+ Network mlops-lab-7-9_default Created 
+ Network mlops-lab-7-9_default Created 
+ Container mlops-lab-7-9-mlflow-1 Creating 
+ Container mlops-lab-7-9-mlflow-1 Created 
+ Container mlops-lab-7-9-api-1 Creating 
+ Container mlops-lab-7-9-api-1 Created 
+ Container mlops-lab-7-9-mlflow-1 Starting 
+ Container mlops-lab-7-9-mlflow-1 Started 
+ Container mlops-lab-7-9-mlflow-1 Waiting 
+ Container mlops-lab-7-9-mlflow-1 Healthy 
+ Container mlops-lab-7-9-api-1 Starting 
+ Container mlops-lab-7-9-api-1 Started 
+

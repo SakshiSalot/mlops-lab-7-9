@@ -1,0 +1,3 @@
+$ docker version --format client {{.Client.Version}} / server {{.Server.Version}} ({{.Server.Os}}/{{.Server.Arch}})
+client 29.8.2 / server 29.8.2 (linux/amd64)
+

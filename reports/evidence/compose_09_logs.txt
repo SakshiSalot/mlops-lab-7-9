@@ -1,0 +1,32 @@
+$ docker compose -f docker-compose.yml -f /tmp/claude-0/-home-claude/40f4bf80-5687-5615-960d-cf534cd5c1ee/scratchpad/docker/compose.sandbox.yml logs --no-color --tail 40
+api-1  | INFO:     Started server process [1]
+api-1  | INFO:     Waiting for application startup.
+api-1  | 2026-11-06 10:43:41,773 INFO house_api: model loaded: version=1.0.0+b09c57dd3b34 path=/app/models/model.joblib
+api-1  | INFO:     Application startup complete.
+api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+api-1  | 2026-11-06 10:43:42,536 INFO house_api: GET /health -> 200 in 367.6 ms (request_id=1fb53ef3124e)
+api-1  | INFO:     172.18.0.1:54950 - "GET /health HTTP/1.1" 200 OK
+mlflow-1  | Registry store URI not provided. Using backend store URI.
+mlflow-1  | [MLflow] Security middleware enabled. Allowed hosts: mlflow, mlflow:5000, localhost, and 3 more.
+mlflow-1  | 2026/11/06 10:43:31 INFO mlflow.server.jobs.executor_registry: Available backends after discovery: local
+mlflow-1  | 2026/11/06 10:43:31 INFO mlflow.server.jobs.executor_registry: Job executor backend 'local' passed requirements check
+mlflow-1  | /usr/local/lib/python3.11/dist-packages/mlflow/server/fastapi_app.py:23: StarletteDeprecationWarning: starlette.middleware.wsgi is deprecated and will be removed in a future release. Please refer to https://github.com/abersheeran/a2wsgi as a replacement.
+mlflow-1  |   from starlette.middleware.wsgi import WSGIResponder, build_environ
+mlflow-1  | 2026/11/06 10:43:34 INFO:     Started server process [12]
+mlflow-1  | 2026/11/06 10:43:34 INFO:     Waiting for application startup.
+mlflow-1  | 2026/11/06 10:43:34 INFO:     Application startup complete.
+mlflow-1  | 2026/11/06 10:43:34 INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+mlflow-1  | 2026/11/06 10:43:39 INFO:     127.0.0.1:55378 - "GET /health HTTP/1.1" 200 OK
+mlflow-1  | 2026/11/06 10:43:42 INFO:     172.18.0.3:51118 - "GET /api/2.0/mlflow/experiments/search?max_results=1 HTTP/1.1" 200 OK
+mlflow-1  | 2026/11/06 10:43:42 INFO:     172.18.0.1:43376 - "GET /health HTTP/1.1" 200 OK
+mlflow-1  | 2026/11/06 10:43:42 INFO:     172.18.0.1:43390 - "GET /api/2.0/mlflow/runs/get?run_uuid=6a53f2a9b9314d96843fa3f1b6847f45&run_id=6a53f2a9b9314d96843fa3f1b6847f45 HTTP/1.1" 200 OK
+mlflow-1  | 2026/11/06 10:43:42 INFO:     172.18.0.1:43390 - "GET /api/2.0/mlflow/runs/get?run_uuid=6a53f2a9b9314d96843fa3f1b6847f45&run_id=6a53f2a9b9314d96843fa3f1b6847f45 HTTP/1.1" 200 OK
+mlflow-1  | 2026/11/06 10:43:42 INFO:     172.18.0.1:43390 - "GET /api/2.0/mlflow-artifacts/artifacts?path=1%2F6a53f2a9b9314d96843fa3f1b6847f45%2Fartifacts%2Fcheck%2Fmodel_metadata.json HTTP/1.1" 200 OK
+mlflow-1  | 2026/11/06 10:43:42 INFO:     172.18.0.1:43406 - "GET /api/3.0/mlflow/server-info HTTP/1.1" 200 OK
+mlflow-1  | 2026/11/06 10:43:42 INFO:     172.18.0.1:43390 - "GET /api/2.0/mlflow-artifacts/artifacts/1/6a53f2a9b9314d96843fa3f1b6847f45/artifacts/check/model_metadata.json HTTP/1.1" 200 OK
+mlflow-1  | 2026/11/06 10:43:42 INFO:     172.18.0.1:43390 - "GET /api/2.0/mlflow/runs/get?run_uuid=6a53f2a9b9314d96843fa3f1b6847f45&run_id=6a53f2a9b9314d96843fa3f1b6847f45 HTTP/1.1" 200 OK
+mlflow-1  | 2026/11/06 10:43:43 INFO mlflow.server.jobs.utils: Registered online_scoring_scheduler periodic task (runs every 1 minute)
+mlflow-1  | 2026/11/06 10:43:43 INFO mlflow.server.jobs.utils: Registered trace_archival_scheduler periodic task (polls every 1 minute and no-ops when trace archival is disabled or unconfigured)
+mlflow-1  | 2026/11/06 10:43:43 INFO mlflow.server.jobs.utils: SQL trace rollup scheduler was not registered because rollups are disabled
+mlflow-1  | 2026/11/06 10:43:43 INFO:     172.18.0.1:43390 - "POST /api/2.0/mlflow/logged-models/search HTTP/1.1" 200 OK
+

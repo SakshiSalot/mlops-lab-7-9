@@ -1,0 +1,3 @@
+$ docker compose -f docker-compose.yml -f /tmp/claude-0/-home-claude/40f4bf80-5687-5615-960d-cf534cd5c1ee/scratchpad/docker/compose.sandbox.yml exec -T api python -c import urllib.request as u; r = u.urlopen('http://mlflow:5000/api/2.0/mlflow/experiments/search?max_results=1', timeout=5); print('HTTP', r.status)
+HTTP 200
+

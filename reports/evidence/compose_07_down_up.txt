@@ -1,0 +1,28 @@
+$ docker compose -f docker-compose.yml -f /tmp/claude-0/-home-claude/40f4bf80-5687-5615-960d-cf534cd5c1ee/scratchpad/docker/compose.sandbox.yml down
+ Container mlops-lab-7-9-api-1 Stopping 
+ Container mlops-lab-7-9-api-1 Stopped 
+ Container mlops-lab-7-9-api-1 Removing 
+ Container mlops-lab-7-9-api-1 Removed 
+ Container mlops-lab-7-9-mlflow-1 Stopping 
+ Container mlops-lab-7-9-mlflow-1 Stopped 
+ Container mlops-lab-7-9-mlflow-1 Removing 
+ Container mlops-lab-7-9-mlflow-1 Removed 
+ Network mlops-lab-7-9_default Removing 
+ Network mlops-lab-7-9_default Removed 
+
+$ docker compose -f docker-compose.yml -f /tmp/claude-0/-home-claude/40f4bf80-5687-5615-960d-cf534cd5c1ee/scratchpad/docker/compose.sandbox.yml up -d
+ Network mlops-lab-7-9_default Creating 
+ Network mlops-lab-7-9_default Creating 
+ Network mlops-lab-7-9_default Created 
+ Network mlops-lab-7-9_default Created 
+ Container mlops-lab-7-9-mlflow-1 Creating 
+ Container mlops-lab-7-9-mlflow-1 Created 
+ Container mlops-lab-7-9-api-1 Creating 
+ Container mlops-lab-7-9-api-1 Created 
+ Container mlops-lab-7-9-mlflow-1 Starting 
+ Container mlops-lab-7-9-mlflow-1 Started 
+ Container mlops-lab-7-9-mlflow-1 Waiting 
+ Container mlops-lab-7-9-mlflow-1 Healthy 
+ Container mlops-lab-7-9-api-1 Starting 
+ Container mlops-lab-7-9-api-1 Started 
+

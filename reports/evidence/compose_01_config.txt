@@ -1,0 +1,70 @@
+$ docker compose -f docker-compose.yml -f /tmp/claude-0/-home-claude/40f4bf80-5687-5615-960d-cf534cd5c1ee/scratchpad/docker/compose.sandbox.yml config --quiet
+
+$ docker compose -f docker-compose.yml -f /tmp/claude-0/-home-claude/40f4bf80-5687-5615-960d-cf534cd5c1ee/scratchpad/docker/compose.sandbox.yml config
+name: mlops-lab-7-9
+services:
+  api:
+    build:
+      context: /home/claude/lab79/mlops-lab-7-9
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: local/python:3.11-slim-standin
+    depends_on:
+      mlflow:
+        condition: service_healthy
+        required: true
+    environment:
+      LOG_LEVEL: info
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      MODEL_PATH: /app/models/model.joblib
+    image: ml-inference-api:1.0
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8000
+        published: "8000"
+        protocol: tcp
+    restart: unless-stopped
+  mlflow:
+    command:
+      - mlflow
+      - server
+      - --host=0.0.0.0
+      - --port=5000
+      - --backend-store-uri=sqlite:////mlflow/mlflow.db
+      - --artifacts-destination=/mlflow/artifacts
+      - --workers=1
+      - --allowed-hosts=mlflow,mlflow:5000,localhost,localhost:*,127.0.0.1,127.0.0.1:*
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request; urllib.request.urlopen('http://localhost:5000/health',
+          timeout=3)
+      timeout: 5s
+      interval: 10s
+      retries: 12
+      start_period: 20s
+    image: local/mlflow:v3.17.1-standin
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5000
+        published: "5000"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: mlflow-data
+        target: /mlflow
+        volume: {}
+networks:
+  default:
+    name: mlops-lab-7-9_default
+volumes:
+  mlflow-data:
+    name: mlops-lab-7-9_mlflow-data
+

@@ -1,0 +1,14 @@
+# Reproduced challenge: MLflow 3.17.1 server started WITHOUT --allowed-hosts
+# (same docker-compose.yml, mlflow command overridden to drop the flag)
+$ curl http://localhost:8000/health
+{"status":"ok","model_loaded":true,"model_version":"1.0.0+b09c57dd3b34","uptime_s":0.4,"mlflow":{"configured":true,"reachable":false,"uri":"http://mlflow:5000","http_status":403}}
+$ docker compose exec api python -c "urllib.request.urlopen(\"http://mlflow:5000/api/2.0/mlflow/experiments/search?max_results=1\")"
+HTTPError HTTP Error 403: Forbidden
+$ docker compose logs mlflow | grep -i host
+mlflow-1  | 2026/11/06 10:39:41 INFO:     172.18.0.3:45036 - "GET /api/2.0/mlflow/experiments/search?max_results=1 HTTP/1.1" 403 Forbidden
+mlflow-1  | 2026/11/06 10:39:41 WARNING mlflow.server.fastapi_security: Rejected request with invalid Host header: mlflow:5000
+mlflow-1  | 2026/11/06 10:39:41 INFO:     172.18.0.3:45042 - "GET /api/2.0/mlflow/experiments/search?max_results=1 HTTP/1.1" 403 Forbidden
+
+# Fix (docker-compose.yml): --allowed-hosts=mlflow,mlflow:5000,localhost,localhost:*,127.0.0.1,127.0.0.1:*
+# After the fix the same health call reports "reachable": true (reports/compose_validation.md, step 4).
+# Note: MLflow's own /health route skips the Host check, which is why the API probes a real API route.

@@ -1,0 +1,6 @@
+$ docker stop ml-api
+ml-api
+
+$ docker rm ml-api
+ml-api
+

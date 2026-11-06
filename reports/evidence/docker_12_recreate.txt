@@ -1,0 +1,3 @@
+$ docker run -d --name ml-api -p 8000:8000 ml-inference-api:1.0
+4121f068e829a1f9a9112b31c0c214a8901e69f568366a4006e4219e070bed27
+
