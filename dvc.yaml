@@ -1,0 +1,35 @@
+# DVC pipeline: raw data -> cleaned split -> trained pipeline -> evaluation report.
+# `dvc repro` reruns `train` only when the data, the code or these config keys change.
+# `python -m src.train` does the same work without DVC.
+stages:
+  train:
+    cmd: python -m src.train
+    deps:
+      - data/raw/houses_raw.csv
+      - src/schema.py
+      - src/config.py
+      - src/data.py
+      - src/features.py
+      - src/train.py
+      - src/evaluate.py
+      - src/predict.py
+    params:
+      - configs/config.yaml:
+          - data
+          - training
+          - model
+          - project.model_version
+    outs:
+      - data/processed                   # cleaned train.csv / test.csv
+      - models/model.joblib              # preprocessing + estimator (what the API loads)
+      - models/model_metadata.json       # SHA-256, schema, metrics, library versions
+      - reports/evaluation.md:           # small text reports stay in Git
+          cache: false
+      - reports/data_quality.json:
+          cache: false
+    metrics:
+      - reports/metrics.json:
+          cache: false
+    plots:
+      - reports/figures/residuals.png:
+          cache: false

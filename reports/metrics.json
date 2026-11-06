@@ -1,0 +1,11 @@
+{
+  "test_mae": 5.5358,
+  "test_rmse": 8.918359,
+  "test_r2": 0.964119,
+  "test_mape": 0.065185,
+  "baseline_rmse_predict_mean": 47.081795,
+  "test_rows": 238,
+  "cv_folds": 5,
+  "cv_rmse_mean": 7.756675,
+  "cv_rmse_std": 1.125435
+}

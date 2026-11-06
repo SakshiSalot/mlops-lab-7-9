@@ -1,0 +1,90 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python -m src.train
+    deps:
+    - path: data/raw/houses_raw.csv
+      hash: md5
+      md5: 71a9a5cf87f4278f9577530e728ba46b
+      size: 47889
+    - path: src/config.py
+      hash: md5
+      md5: 0fbec2360279c0135506bd73cb6e6f05
+      size: 1574
+    - path: src/data.py
+      hash: md5
+      md5: e6a5c894093864ed22abd7871d6b4b1e
+      size: 8304
+    - path: src/evaluate.py
+      hash: md5
+      md5: 43fa7b32037c393e020362c5309ec89d
+      size: 6584
+    - path: src/features.py
+      hash: md5
+      md5: 9f8e3b2416fc5f07db76d4501a59cd07
+      size: 3703
+    - path: src/predict.py
+      hash: md5
+      md5: 5965c98fca533da172736fc5d8175eef
+      size: 6352
+    - path: src/schema.py
+      hash: md5
+      md5: d90ebe478c0d6eac6b43dcf5c3807fce
+      size: 2252
+    - path: src/train.py
+      hash: md5
+      md5: 2218dd2cd74f34381323867fd530bf3f
+      size: 9319
+    params:
+      configs/config.yaml:
+        data:
+          raw_path: data/raw/houses_raw.csv
+          processed_dir: data/processed
+        model:
+          type: gradient_boosting
+          gradient_boosting:
+            n_estimators: 300
+            learning_rate: 0.05
+            max_depth: 3
+            subsample: 0.9
+          random_forest:
+            n_estimators: 100
+            max_depth: 5
+            min_samples_leaf: 2
+          ridge:
+            alpha: 1.0
+        project.model_version: 1.0.0
+        training:
+          random_state: 42
+          test_size: 0.2
+          cv_folds: 5
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: 34ba08456138d5d87c4537560b344c8a.dir
+      size: 56210
+      nfiles: 2
+    - path: models/model.joblib
+      hash: md5
+      md5: 00f0d33b41b8013f1a863e469d5dcaa5
+      size: 406383
+    - path: models/model_metadata.json
+      hash: md5
+      md5: 7463aed8327b5402d734bc3b6068d643
+      size: 1583
+    - path: reports/data_quality.json
+      hash: md5
+      md5: ce4e71d7080395b438db60a728d4530b
+      size: 677
+    - path: reports/evaluation.md
+      hash: md5
+      md5: f9bab829fe88ff0ad293fcf91f6fbcd1
+      size: 969
+    - path: reports/figures/residuals.png
+      hash: md5
+      md5: ed4686256140a0596362de33a12057f0
+      size: 84364
+    - path: reports/metrics.json
+      hash: md5
+      md5: 2dd9446843788433e07458e68d6ff9ec
+      size: 233

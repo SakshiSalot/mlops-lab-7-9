@@ -1,0 +1,27 @@
+{
+  "raw_rows": 1230,
+  "values_unparseable_set_to_nan": {},
+  "exact_duplicates_removed": 30,
+  "repeated_ids_removed": 0,
+  "invalid_target_rows_removed": 10,
+  "out_of_range_set_to_nan": {
+    "area_sqft": 3,
+    "year_built": 3
+  },
+  "business_rule_violations_set_to_nan": 0,
+  "clean_rows": 1190,
+  "missing_values_left_for_imputation": {
+    "area_sqft": 25,
+    "bedrooms": 18,
+    "bathrooms": 17,
+    "year_built": 20,
+    "distance_to_center_km": 13,
+    "has_garage": 9,
+    "locality": 16
+  },
+  "target_missing_after_cleaning": 0,
+  "raw_path": "data/raw/houses_raw.csv",
+  "raw_md5": "71a9a5cf87f4278f9577530e728ba46b",
+  "train_rows": 952,
+  "test_rows": 238
+}
