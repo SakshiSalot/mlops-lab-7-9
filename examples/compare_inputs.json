@@ -1,0 +1,56 @@
+[
+  {
+    "area_sqft": 1850,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "year_built": 2012,
+    "distance_to_center_km": 6.5,
+    "has_garage": true,
+    "locality": "North"
+  },
+  {
+    "area_sqft": 650,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "year_built": 1985,
+    "distance_to_center_km": 22.0,
+    "has_garage": false,
+    "locality": "East"
+  },
+  {
+    "area_sqft": 1200,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "year_built": 2005,
+    "distance_to_center_km": 12.3,
+    "has_garage": false,
+    "locality": "West"
+  },
+  {
+    "area_sqft": 2400,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "year_built": 2019,
+    "distance_to_center_km": 3.1,
+    "has_garage": true,
+    "locality": "Central"
+  },
+  {
+    "area_sqft": 3100,
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "year_built": 1998,
+    "distance_to_center_km": 8.75,
+    "has_garage": true,
+    "locality": "South"
+  },
+  {
+    "area_sqft": 3900.5,
+    "bedrooms": 6,
+    "bathrooms": 5,
+    "year_built": 2024,
+    "distance_to_center_km": 0.8,
+    "has_garage": true,
+    "locality": "North"
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "info": {
+    "name": "House Price API (MLOps Lab 7-9)",
+    "description": "Import into Postman (File > Import). Set the baseUrl variable to http://127.0.0.1:8000 (local) or http://localhost:8000 (Docker). Each request has a test that checks the status code.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://127.0.0.1:8000" }],
+  "item": [
+    {
+      "name": "Health check",
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('status 200', () => pm.response.to.have.status(200));",
+        "pm.test('model loaded', () => pm.expect(pm.response.json().model_loaded).to.eql(true));"
+      ] } }]
+    },
+    {
+      "name": "Predict - valid input",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/predict",
+        "body": { "mode": "raw", "raw": "{\n  \"area_sqft\": 1850,\n  \"bedrooms\": 3,\n  \"bathrooms\": 2,\n  \"year_built\": 2012,\n  \"distance_to_center_km\": 6.5,\n  \"has_garage\": true,\n  \"locality\": \"North\"\n}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('status 200', () => pm.response.to.have.status(200));",
+        "pm.test('prediction is a number', () => pm.expect(pm.response.json().prediction).to.be.a('number'));"
+      ] } }]
+    },
+    {
+      "name": "Predict - missing field (422)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/predict",
+        "body": { "mode": "raw", "raw": "{\n  \"area_sqft\": 1850,\n  \"bathrooms\": 2,\n  \"year_built\": 2012,\n  \"distance_to_center_km\": 6.5,\n  \"has_garage\": true,\n  \"locality\": \"North\"\n}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('status 422', () => pm.response.to.have.status(422));"
+      ] } }]
+    },
+    {
+      "name": "Predict - wrong type (422)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/predict",
+        "body": { "mode": "raw", "raw": "{\n  \"area_sqft\": \"1850 sqft\",\n  \"bedrooms\": 3,\n  \"bathrooms\": 2,\n  \"year_built\": 2012,\n  \"distance_to_center_km\": 6.5,\n  \"has_garage\": true,\n  \"locality\": \"North\"\n}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('status 422', () => pm.response.to.have.status(422));"
+      ] } }]
+    },
+    {
+      "name": "Predict - business rule (422)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/predict",
+        "body": { "mode": "raw", "raw": "{\n  \"area_sqft\": 1850,\n  \"bedrooms\": 1,\n  \"bathrooms\": 4,\n  \"year_built\": 2012,\n  \"distance_to_center_km\": 6.5,\n  \"has_garage\": true,\n  \"locality\": \"North\"\n}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('status 422', () => pm.response.to.have.status(422));",
+        "pm.test('explains the rule', () => pm.expect(pm.response.text()).to.include('cannot exceed bedrooms'));"
+      ] } }]
+    },
+    {
+      "name": "Model info",
+      "request": { "method": "GET", "url": "{{baseUrl}}/model-info" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('status 200', () => pm.response.to.have.status(200));"
+      ] } }]
+    }
+  ]
+}
