@@ -14,7 +14,7 @@ import json
 import time
 
 from _common import EVIDENCE, REPORTS, ROOT, http, load_json, md_table, now, run, wait_for
-from compare_predictions import compare
+from compare_predictions import compare, render
 
 
 def main() -> None:
@@ -84,7 +84,8 @@ def main() -> None:
          f"{status}: {bad['details'][0]['field']} - {bad['details'][0]['message']}")
 
     result = compare(url)
-    step(8, "Local vs container (Part D)", "scripts/compare_predictions.py",
+    (REPORTS / "local_vs_container.md").write_text(render(result, url, "docker container"), encoding="utf-8")
+    step(8, "Local vs container (Part D)", "scripts/compare_predictions.py -> reports/local_vs_container.md",
          f"{len(result['rows'])} inputs, max abs diff {result['max_diff']:.2e}, same artifact: "
          f"{result['local_sha'] == result['remote_sha']}")
 

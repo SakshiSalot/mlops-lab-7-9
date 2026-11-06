@@ -20,114 +20,114 @@ $ docker build --no-cache --build-arg BASE_IMAGE=local/python:3.11-slim-standin 
 #5 CACHED
 
 #6 [internal] load build context
-#6 transferring context: 1.13kB done
+#6 transferring context: 494.01kB 0.0s done
 #6 DONE 0.0s
 
 #7 [3/7] COPY requirements.txt .
 #7 DONE 0.0s
 
 #8 [4/7] RUN pip install --no-cache-dir -r requirements.txt
-#8 0.631 Collecting fastapi==0.143.3 (from -r requirements.txt (line 6))
-#8 0.700   Downloading fastapi-0.143.3-py3-none-any.whl.metadata (26 kB)
-#8 0.752 Collecting uvicorn==0.54.0 (from -r requirements.txt (line 7))
-#8 0.771   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
-#8 1.012 Collecting pydantic==2.14.1 (from -r requirements.txt (line 8))
-#8 1.034   Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
-#8 1.040      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.0/133.0 kB 122.5 MB/s eta 0:00:00
-#8 1.144 Collecting scikit-learn==1.9.1 (from -r requirements.txt (line 9))
-#8 1.163   Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
-#8 1.422 Collecting numpy==2.4.6 (from -r requirements.txt (line 10))
-#8 1.441   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
-#8 1.590 Collecting scipy==1.17.1 (from -r requirements.txt (line 11))
-#8 1.611   Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
-#8 1.614      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 182.7 MB/s eta 0:00:00
-#8 1.833 Collecting pandas==3.0.6 (from -r requirements.txt (line 12))
-#8 1.853   Downloading pandas-3.0.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
-#8 1.856      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 291.3 MB/s eta 0:00:00
-#8 1.924 Collecting joblib==1.6.0 (from -r requirements.txt (line 13))
-#8 1.942   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
-#8 2.013 Collecting PyYAML==6.0.3 (from -r requirements.txt (line 14))
-#8 2.040   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
-#8 2.166 Collecting starlette>=0.46.0 (from fastapi==0.143.3->-r requirements.txt (line 6))
-#8 2.186   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
-#8 2.239 Collecting typing-extensions>=4.8.0 (from fastapi==0.143.3->-r requirements.txt (line 6))
-#8 2.261   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
-#8 2.297 Collecting typing-inspection>=0.4.2 (from fastapi==0.143.3->-r requirements.txt (line 6))
+#8 0.804 Collecting fastapi==0.143.3 (from -r requirements.txt (line 6))
+#8 0.872   Downloading fastapi-0.143.3-py3-none-any.whl.metadata (26 kB)
+#8 0.932 Collecting uvicorn==0.54.0 (from -r requirements.txt (line 7))
+#8 0.952   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+#8 1.108 Collecting pydantic==2.14.1 (from -r requirements.txt (line 8))
+#8 1.125   Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+#8 1.131      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.0/133.0 kB 47.4 MB/s eta 0:00:00
+#8 1.239 Collecting scikit-learn==1.9.1 (from -r requirements.txt (line 9))
+#8 1.258   Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
+#8 1.523 Collecting numpy==2.4.6 (from -r requirements.txt (line 10))
+#8 1.541   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+#8 1.696 Collecting scipy==1.17.1 (from -r requirements.txt (line 11))
+#8 1.716   Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#8 1.718      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 164.8 MB/s eta 0:00:00
+#8 1.911 Collecting pandas==3.0.6 (from -r requirements.txt (line 12))
+#8 1.928   Downloading pandas-3.0.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+#8 1.931      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 247.1 MB/s eta 0:00:00
+#8 1.978 Collecting joblib==1.6.0 (from -r requirements.txt (line 13))
+#8 1.996   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+#8 2.048 Collecting PyYAML==6.0.3 (from -r requirements.txt (line 14))
+#8 2.066   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+#8 2.183 Collecting starlette>=0.46.0 (from fastapi==0.143.3->-r requirements.txt (line 6))
+#8 2.202   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+#8 2.254 Collecting typing-extensions>=4.8.0 (from fastapi==0.143.3->-r requirements.txt (line 6))
+#8 2.273   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#8 2.303 Collecting typing-inspection>=0.4.2 (from fastapi==0.143.3->-r requirements.txt (line 6))
 #8 2.321   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
-#8 2.351 Collecting annotated-doc>=0.0.2 (from fastapi==0.143.3->-r requirements.txt (line 6))
-#8 2.372   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
-#8 2.416 Collecting opentelemetry-api>=1.44.0 (from fastapi==0.143.3->-r requirements.txt (line 6))
-#8 2.435   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
-#8 2.480 Collecting click>=7.0 (from uvicorn==0.54.0->-r requirements.txt (line 7))
-#8 2.499   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
-#8 2.528 Collecting h11>=0.8 (from uvicorn==0.54.0->-r requirements.txt (line 7))
-#8 2.546   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
-#8 2.580 Collecting annotated-types>=0.6.0 (from pydantic==2.14.1->-r requirements.txt (line 8))
-#8 2.598   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
-#8 3.605 Collecting pydantic-core==2.50.1 (from pydantic==2.14.1->-r requirements.txt (line 8))
-#8 3.625   Downloading pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
-#8 3.728 Collecting narwhals>=2.0.1 (from scikit-learn==1.9.1->-r requirements.txt (line 9))
-#8 3.746   Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
-#8 3.779 Collecting threadpoolctl>=3.5.0 (from scikit-learn==1.9.1->-r requirements.txt (line 9))
-#8 3.803   Downloading threadpoolctl-3.8.0-py3-none-any.whl.metadata (29 kB)
-#8 3.911 Collecting python-dateutil>=2.8.2 (from pandas==3.0.6->-r requirements.txt (line 12))
-#8 3.930   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
-#8 3.978 Collecting cloudpickle>=3.0 (from joblib==1.6.0->-r requirements.txt (line 13))
-#8 3.995   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
-#8 4.057 Collecting tzdata (from python-dateutil>=2.8.2->pandas==3.0.6->-r requirements.txt (line 12))
-#8 4.075   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
-#8 4.126 Collecting anyio<5,>=4.0.0 (from starlette>=0.46.0->fastapi==0.143.3->-r requirements.txt (line 6))
-#8 4.144   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
-#8 4.197 Collecting idna>=2.8 (from anyio<5,>=4.0.0->starlette>=0.46.0->fastapi==0.143.3->-r requirements.txt (line 6))
-#8 4.215   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
-#8 4.248 Downloading fastapi-0.143.3-py3-none-any.whl (144 kB)
-#8 4.250    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.8/144.8 kB 404.6 MB/s eta 0:00:00
-#8 4.270 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
-#8 4.273    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.4/87.4 kB 351.5 MB/s eta 0:00:00
-#8 4.291 Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
-#8 4.296    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 488.1/488.1 kB 427.5 MB/s eta 0:00:00
-#8 4.315 Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
-#8 4.412    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 101.7 MB/s eta 0:00:00
-#8 4.431 Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
-#8 4.568    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 124.2 MB/s eta 0:00:00
-#8 4.586 Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
-#8 4.867    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 124.7 MB/s eta 0:00:00
-#8 4.885 Downloading pandas-3.0.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.1 MB)
-#8 4.986    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 124.3 MB/s eta 0:00:00
-#8 5.005 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
-#8 5.008    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 306.1/306.1 kB 431.4 MB/s eta 0:00:00
-#8 5.028 Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
-#8 5.034    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 207.6 MB/s eta 0:00:00
-#8 5.055 Downloading pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
-#8 5.072    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 156.8 MB/s eta 0:00:00
-#8 5.091 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
-#8 5.109 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
-#8 5.128 Downloading click-8.5.0-py3-none-any.whl (125 kB)
-#8 5.130    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.3/125.3 kB 525.4 MB/s eta 0:00:00
-#8 5.148 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
-#8 5.167 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
-#8 5.185 Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
-#8 5.189    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 490.6/490.6 kB 320.0 MB/s eta 0:00:00
-#8 5.209 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
-#8 5.211    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.3/60.3 kB 229.4 MB/s eta 0:00:00
-#8 5.232 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
-#8 5.234    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 229.1 MB/s eta 0:00:00
-#8 5.252 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
-#8 5.254    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.6/80.6 kB 361.1 MB/s eta 0:00:00
-#8 5.271 Downloading threadpoolctl-3.8.0-py3-none-any.whl (32 kB)
-#8 5.290 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
-#8 5.292    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 209.8 MB/s eta 0:00:00
-#8 5.310 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
-#8 5.327 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
-#8 5.330    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.5/134.5 kB 310.6 MB/s eta 0:00:00
-#8 5.350 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
-#8 5.353    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 295.0 MB/s eta 0:00:00
-#8 5.374 Downloading idna-3.20-py3-none-any.whl (69 kB)
-#8 5.377    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 364.2 MB/s eta 0:00:00
-#8 5.709 Installing collected packages: tzdata, typing-extensions, threadpoolctl, PyYAML, numpy, narwhals, idna, h11, cloudpickle, click, annotated-types, annotated-doc, uvicorn, typing-inspection, scipy, python-dateutil, pydantic-core, opentelemetry-api, joblib, anyio, starlette, scikit-learn, pydantic, pandas, fastapi
-#8 17.75 Successfully installed PyYAML-6.0.3 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.16.0 click-8.5.0 cloudpickle-3.1.2 fastapi-0.143.3 h11-0.16.0 idna-3.20 joblib-1.6.0 narwhals-2.28.0 numpy-2.4.6 opentelemetry-api-1.45.2 pandas-3.0.6 pydantic-2.14.1 pydantic-core-2.50.1 python-dateutil-4.0.0 scikit-learn-1.9.1 scipy-1.17.1 starlette-1.10.0 threadpoolctl-3.8.0 typing-extensions-4.16.0 typing-inspection-0.4.5 tzdata-2026.6 uvicorn-0.54.0
-#8 17.75 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-#8 DONE 18.8s
+#8 2.348 Collecting annotated-doc>=0.0.2 (from fastapi==0.143.3->-r requirements.txt (line 6))
+#8 2.366   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+#8 2.409 Collecting opentelemetry-api>=1.44.0 (from fastapi==0.143.3->-r requirements.txt (line 6))
+#8 2.427   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+#8 2.479 Collecting click>=7.0 (from uvicorn==0.54.0->-r requirements.txt (line 7))
+#8 2.497   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#8 2.525 Collecting h11>=0.8 (from uvicorn==0.54.0->-r requirements.txt (line 7))
+#8 2.543   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#8 2.577 Collecting annotated-types>=0.6.0 (from pydantic==2.14.1->-r requirements.txt (line 8))
+#8 2.596   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#8 3.444 Collecting pydantic-core==2.50.1 (from pydantic==2.14.1->-r requirements.txt (line 8))
+#8 3.462   Downloading pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+#8 3.556 Collecting narwhals>=2.0.1 (from scikit-learn==1.9.1->-r requirements.txt (line 9))
+#8 3.575   Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+#8 3.603 Collecting threadpoolctl>=3.5.0 (from scikit-learn==1.9.1->-r requirements.txt (line 9))
+#8 3.620   Downloading threadpoolctl-3.8.0-py3-none-any.whl.metadata (29 kB)
+#8 3.728 Collecting python-dateutil>=2.8.2 (from pandas==3.0.6->-r requirements.txt (line 12))
+#8 3.748   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+#8 3.793 Collecting cloudpickle>=3.0 (from joblib==1.6.0->-r requirements.txt (line 13))
+#8 3.813   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+#8 3.876 Collecting tzdata (from python-dateutil>=2.8.2->pandas==3.0.6->-r requirements.txt (line 12))
+#8 3.896   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+#8 3.945 Collecting anyio<5,>=4.0.0 (from starlette>=0.46.0->fastapi==0.143.3->-r requirements.txt (line 6))
+#8 3.963   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+#8 4.015 Collecting idna>=2.8 (from anyio<5,>=4.0.0->starlette>=0.46.0->fastapi==0.143.3->-r requirements.txt (line 6))
+#8 4.033   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#8 4.064 Downloading fastapi-0.143.3-py3-none-any.whl (144 kB)
+#8 4.067    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.8/144.8 kB 446.7 MB/s eta 0:00:00
+#8 4.086 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#8 4.089    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.4/87.4 kB 394.8 MB/s eta 0:00:00
+#8 4.107 Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+#8 4.111    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 488.1/488.1 kB 372.6 MB/s eta 0:00:00
+#8 4.130 Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
+#8 4.164    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 291.4 MB/s eta 0:00:00
+#8 4.182 Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+#8 4.278    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 173.0 MB/s eta 0:00:00
+#8 4.298 Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+#8 4.445    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 250.5 MB/s eta 0:00:00
+#8 4.467 Downloading pandas-3.0.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.1 MB)
+#8 4.519    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 216.7 MB/s eta 0:00:00
+#8 4.538 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#8 4.541    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 306.1/306.1 kB 469.1 MB/s eta 0:00:00
+#8 4.560 Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+#8 4.564    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 391.9 MB/s eta 0:00:00
+#8 4.582 Downloading pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+#8 4.593    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 232.7 MB/s eta 0:00:00
+#8 4.612 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#8 4.630 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#8 4.647 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#8 4.650    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.3/125.3 kB 306.6 MB/s eta 0:00:00
+#8 4.668 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#8 4.686 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#8 4.705 Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+#8 4.708    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 490.6/490.6 kB 194.8 MB/s eta 0:00:00
+#8 4.726 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#8 4.728    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.3/60.3 kB 358.4 MB/s eta 0:00:00
+#8 4.746 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+#8 4.748    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 274.0 MB/s eta 0:00:00
+#8 4.767 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+#8 4.768    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.6/80.6 kB 339.9 MB/s eta 0:00:00
+#8 4.786 Downloading threadpoolctl-3.8.0-py3-none-any.whl (32 kB)
+#8 4.803 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#8 4.805    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 328.1 MB/s eta 0:00:00
+#8 4.823 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#8 4.842 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#8 4.844    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.5/134.5 kB 304.4 MB/s eta 0:00:00
+#8 4.862 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+#8 4.865    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 424.4 MB/s eta 0:00:00
+#8 4.883 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#8 4.886    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 377.5 MB/s eta 0:00:00
+#8 5.195 Installing collected packages: tzdata, typing-extensions, threadpoolctl, PyYAML, numpy, narwhals, idna, h11, cloudpickle, click, annotated-types, annotated-doc, uvicorn, typing-inspection, scipy, python-dateutil, pydantic-core, opentelemetry-api, joblib, anyio, starlette, scikit-learn, pydantic, pandas, fastapi
+#8 16.66 Successfully installed PyYAML-6.0.3 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.16.0 click-8.5.0 cloudpickle-3.1.2 fastapi-0.143.3 h11-0.16.0 idna-3.20 joblib-1.6.0 narwhals-2.28.0 numpy-2.4.6 opentelemetry-api-1.45.2 pandas-3.0.6 pydantic-2.14.1 pydantic-core-2.50.1 python-dateutil-4.0.0 scikit-learn-1.9.1 scipy-1.17.1 starlette-1.10.0 threadpoolctl-3.8.0 typing-extensions-4.16.0 typing-inspection-0.4.5 tzdata-2026.6 uvicorn-0.54.0
+#8 16.66 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 DONE 17.7s
 
 #9 [5/7] COPY src/ ./src/
 #9 DONE 0.1s
@@ -140,13 +140,13 @@ $ docker build --no-cache --build-arg BASE_IMAGE=local/python:3.11-slim-standin 
 
 #12 exporting to image
 #12 exporting layers
-#12 exporting layers 13.6s done
-#12 exporting manifest sha256:da5030c6687c77569b8b232c90c92b6570b1d8f4073629bc2b61680d36df456e done
-#12 exporting config sha256:9237140ef9177a5b254a226f9f8d3551c01e4ee3fce10308692142dd67813a96 done
-#12 exporting attestation manifest sha256:629e31c2997446c12d0de7a0240d77f67cab3601519cec3d41ffaa0b82820e3c done
-#12 exporting manifest list sha256:c90660e01d3725c704d4449b9298dfd2b0f71cdf63dc9dafcf8c03d752ae8a54 done
+#12 exporting layers 12.4s done
+#12 exporting manifest sha256:813410ce3a18166366ccac5b39a452a48afdc4e404c7719939b8dea6e0e313bc done
+#12 exporting config sha256:216fa7caa075a2ab924cc1acee170b16389e0761f4104319a87b0d740d2a5932 done
+#12 exporting attestation manifest sha256:1b8e791b09e65c520120bc61333bbc6096a9dd1da3e4df3a255326b2ad07a273 done
+#12 exporting manifest list sha256:543d0666453dd540813c8ad288d82628eec08c7a57625c7617429e59d3f19a70 done
 #12 naming to docker.io/library/ml-inference-api:1.0 done
 #12 unpacking to docker.io/library/ml-inference-api:1.0
-#12 unpacking to docker.io/library/ml-inference-api:1.0 3.8s done
-#12 DONE 17.4s
+#12 unpacking to docker.io/library/ml-inference-api:1.0 3.7s done
+#12 DONE 16.2s
 

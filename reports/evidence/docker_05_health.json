@@ -2,7 +2,7 @@
   "status": "ok",
   "model_loaded": true,
   "model_version": "1.0.0+b09c57dd3b34",
-  "uptime_s": 4.8,
+  "uptime_s": 3.8,
   "mlflow": {
     "configured": false
   }
