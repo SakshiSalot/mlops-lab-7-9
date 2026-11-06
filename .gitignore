@@ -1,0 +1,25 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local MLflow store and artifacts (each machine has its own)
+mlflow.db
+mlruns/
+mlartifacts/
+
+# Generated per run, not part of the submission
+reports/batch_predictions.csv
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets: never commit credentials
+.env
+*.env
+.dvc/config.local

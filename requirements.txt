@@ -1,0 +1,14 @@
+# Runtime dependencies: everything the API container needs to load the saved
+# pipeline and serve predictions. Installed by the Dockerfile.
+# Pinned to the exact versions the model was trained with; works on Python 3.11-3.13.
+# (numpy 2.5 / scipy 1.18 dropped Python 3.11, so these are the newest versions that
+#  still install on the python:3.11-slim base image.)
+fastapi==0.143.3
+uvicorn==0.54.0
+pydantic==2.14.1
+scikit-learn==1.9.1
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.0.6
+joblib==1.6.0
+PyYAML==6.0.3

@@ -1,0 +1,5 @@
+# Keep LF line endings on every OS: DVC hashes files byte-for-byte (dvc.lock),
+# so CRLF checkouts on Windows would make the pipeline look modified.
+* text=auto eol=lf
+*.png binary
+*.joblib binary

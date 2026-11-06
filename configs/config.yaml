@@ -1,0 +1,40 @@
+# Every changeable value of the pipeline lives here (A3).
+# Override any key from the command line without editing this file, e.g.
+#   python -m src.train --set model.type=random_forest --set training.test_size=0.25
+
+project:
+  name: house-price-service
+  model_version: "1.0.0"
+
+data:
+  raw_path: data/raw/houses_raw.csv      # tracked by DVC (data/raw/houses_raw.csv.dvc)
+  processed_dir: data/processed          # cleaned train/test split written here
+
+training:
+  random_state: 42
+  test_size: 0.2
+  cv_folds: 5                            # cross-validation on the TRAIN split only
+
+model:
+  type: gradient_boosting                # gradient_boosting | random_forest | ridge
+  gradient_boosting:                     # carried over from Lab 4 (promoted model gbr_main)
+    n_estimators: 300
+    learning_rate: 0.05
+    max_depth: 3
+    subsample: 0.9
+  random_forest:
+    n_estimators: 100
+    max_depth: 5
+    min_samples_leaf: 2
+  ridge:
+    alpha: 1.0
+
+artifacts:
+  model_path: models/model.joblib        # full inference pipeline (preprocessing + estimator)
+  metadata_path: models/model_metadata.json
+  reports_dir: reports
+
+mlflow:
+  enabled: true
+  tracking_uri: sqlite:///mlflow.db      # the MLFLOW_TRACKING_URI environment variable overrides this
+  experiment_name: house-price-service-lab-7-9
