@@ -1,0 +1,36 @@
+# Keep the build context small and free of secrets. The Dockerfile only needs
+# requirements.txt, src/ and models/.
+.git
+.gitignore
+.gitattributes
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+
+# data, experiment stores and DVC internals are not needed to serve predictions
+data/
+.dvc/
+.dvcignore
+dvc.yaml
+dvc.lock
+mlflow.db
+mlruns/
+mlartifacts/
+
+# docs, tests, reports, helper scripts
+docs/
+reports/
+tests/
+scripts/
+examples/
+notebooks/
+*.md
+Report.pdf
+
+# secrets must never enter an image
+.env
+*.env
+*.pem
+*.key
