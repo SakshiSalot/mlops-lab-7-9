@@ -24,6 +24,7 @@ def main() -> None:
     ap.add_argument("--port", type=int, default=8000)
     ap.add_argument("--base-image", help="override the Dockerfile BASE_IMAGE build argument")
     ap.add_argument("--keep", action="store_true", help="leave the container running at the end")
+    ap.add_argument("--no-cache", action="store_true", help="rebuild every layer (shows a full build)")
     args = ap.parse_args()
     if not (ROOT / "models" / "model.joblib").exists():
         raise SystemExit("models/model.joblib not found: run `dvc pull` or `python -m src.train` first")
@@ -45,6 +46,8 @@ def main() -> None:
     build = ["docker", "build", "-t", args.image, "."]
     if args.base_image:
         build[2:2] = ["--build-arg", f"BASE_IMAGE={args.base_image}"]
+    if args.no_cache:
+        build[2:2] = ["--no-cache"]
     t0 = time.time()
     run(build, EVIDENCE / "docker_02_build.txt")
     step(2, "Build image (C7.14)", " ".join(build), f"success in {time.time() - t0:.0f}s")
